@@ -12,7 +12,7 @@ const database = new Databases(client);
 export default function Home() {
   const [gifts, setGifts] = useState([]);
   const [gift, setGift] = useState([]);
-
+  const [disable, setDisable] = useState(false);
   const [hidden, setHidden] = useState("invisible");
 
   const buttons = [
@@ -40,6 +40,7 @@ export default function Home() {
       ID.unique(),
       { title: `ΔΩΡΟ Νο ${numb}` }
     );
+    setDisable(true);
     setHidden("");
     getGiftOption();
   };
@@ -82,7 +83,8 @@ export default function Home() {
                   onClick={() => {
                     pressButton(b.num);
                   }}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none disabled:opacity-25"
+                  disabled={disable}
                 >
                   Δώρο {b.num}
                 </button>
