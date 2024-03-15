@@ -74,7 +74,7 @@ export default function Home() {
   }, []);
   console.log(gift?.title);
   return (
-    <main className="flex flex-col justify-center items-center h-screen bg-gray-100">
+    <main className="flex flex-col justify-center items-center h-screen bg-gray-100 p-10">
       <div className="text-center flex flex-col p-5">
         <h1 className="text-4xl font-bold mb-4">Κατερίνα Βασιλοπούλου</h1>
         <h3 className="text-lg text-gray-700 mb-2">
