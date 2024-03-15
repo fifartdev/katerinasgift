@@ -55,7 +55,7 @@ export default function Home() {
       "65f4514ae761f2656e2d",
       "65f456036ce1cd18daa8",
       ID.unique(),
-      { title: `ΔΩΡΟ Νο ${numb}` }
+      { title: `ΚΟΥΡΤΙΝΑ Νο ${numb}` }
     );
     setDisable(true);
     setHidden("");
@@ -89,7 +89,7 @@ export default function Home() {
         </h4>
         <p className="text-xs md:text-sm text-gray-800 mb-4">
           Μόλις κάνεις την επιλογή σου η οποία και θα είναι μία και μοναδική, θα
-          σου αποκαλυφθούν, οι άλλες 2 επιλογές που έχασες!
+          σου αποκαλυφθούν, οι άλλες 5 επιλογές που μόλις έχασες!
         </p>
         <h1 className="text-xl md:text-2xl font-bold mb-4">Καλή σου τύχη!</h1>
       </div>
