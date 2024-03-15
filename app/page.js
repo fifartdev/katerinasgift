@@ -18,35 +18,35 @@ export default function Home() {
   const buttons = [
     {
       num: 1,
-      title: "LONGCHAMP LE PLIAGE GREEN",
-      url: "https://www.atticadps.gr/gunaikeia-moda/tsantes/sakidia-platis/longchamp-gynaikeio-sakidio-platis-le-pliage-green-00000096321/?Color=%CE%9C%CE%B1%CF%8D%CF%81%CE%BF&campaignid=20516728234&gad_source=1&gclid=CjwKCAjw48-vBhBbEiwAzqrZVAeEUCiVxOntQgOyYMY4NfRxotPgLMiQOvgYSKo4BYCPep0cP7Zf-RoCOUYQAvD_BwE",
-    },
-    {
-      num: 2,
-      title: "Ταξίδι στη Ρώμη (Ανοιχτή ημερομηνία)",
-      url: "https://www.tripadvisor.com.gr/Tourism-g187791-Rome_Lazio-Vacations.html",
-    },
-    {
-      num: 3,
-      title: "Σετ Hyperbola Swarovski",
-      url: "https://www.swarovski.com/el-GR/p-M5682483/Set-Hyperbola-Apeiro-Leyko-Epimetallwsh-se-roz-xrysafi-tono/?variantID=5682483",
-    },
-    {
-      num: 4,
       title:
         "Μία Δωροεπιταγή αξίας 300€ για να την ξοδέψεις στα ZARA μαγαζάρα!",
       url: "https://www.zara.com/gr/",
     },
     {
-      num: 5,
-      title: "Δωροεπιταγή αξίας 150€ στα καταστήματα Ε-Perfumes",
-      url: "https://eperfumes.gr",
+      num: 2,
+      title: "Σετ Hyperbola Swarovski",
+      url: "https://www.swarovski.com/el-GR/p-M5682483/Set-Hyperbola-Apeiro-Leyko-Epimetallwsh-se-roz-xrysafi-tono/?variantID=5682483",
     },
     {
-      num: 6,
+      num: 3,
       title:
         "Τον ένα και μοναδικό ανεπανάλληπτο αντρούλη σου για 1 ζωή ακόμα!!! MEGA ΔΩΡΟ",
       url: "#",
+    },
+    {
+      num: 4,
+      title: "LONGCHAMP LE PLIAGE GREEN",
+      url: "https://www.atticadps.gr/gunaikeia-moda/tsantes/sakidia-platis/longchamp-gynaikeio-sakidio-platis-le-pliage-green-00000096321/?Color=%CE%9C%CE%B1%CF%8D%CF%81%CE%BF&campaignid=20516728234&gad_source=1&gclid=CjwKCAjw48-vBhBbEiwAzqrZVAeEUCiVxOntQgOyYMY4NfRxotPgLMiQOvgYSKo4BYCPep0cP7Zf-RoCOUYQAvD_BwE",
+    },
+    {
+      num: 5,
+      title: "Ταξίδι στη Ρώμη (Ανοιχτή ημερομηνία)",
+      url: "https://www.tripadvisor.com.gr/Tourism-g187791-Rome_Lazio-Vacations.html",
+    },
+    {
+      num: 6,
+      title: "Δωροεπιταγή αξίας 150€ στα καταστήματα Ε-Perfumes",
+      url: "https://eperfumes.gr",
     },
   ];
 
