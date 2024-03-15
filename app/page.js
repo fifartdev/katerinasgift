@@ -31,6 +31,22 @@ export default function Home() {
       title: "Ταξίδι στη Ρώμη (Ανοιχτή ημερομηνία)",
       url: "https://www.tripadvisor.com.gr/Tourism-g187791-Rome_Lazio-Vacations.html",
     },
+    {
+      num: 4,
+      title: "Σετ Hyperbola Swarovski",
+      url: "https://www.swarovski.com/el-GR/p-M5682483/Set-Hyperbola-Apeiro-Leyko-Epimetallwsh-se-roz-xrysafi-tono/?variantID=5682483",
+    },
+    {
+      num: 5,
+      title: "18k White gold ring with diamonds & Pearls",
+      url: "https://goldenpap.gr/collections/rings-with-diamonds/products/18k-white-gold-ring-with-diamonds-pearls?variant=37824299237531",
+    },
+    {
+      num: 6,
+      title:
+        "Τον ένα και μοναδικό ανεπανάλληπτο αντρούλη σου για 1 ζωή ακόμα!!! MEGA ΔΩΡΟ",
+      url: "#",
+    },
   ];
 
   const pressButton = async (numb) => {
@@ -91,7 +107,7 @@ export default function Home() {
                 <br />
                 <p className={`text-sm ${hidden}`}>
                   🔗{" "}
-                  <a href={b.url} className="text-blue-500">
+                  <a href={b.url} className="text-blue-500" target="_blank">
                     {b.title}
                   </a>
                 </p>
