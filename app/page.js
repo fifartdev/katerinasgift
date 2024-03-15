@@ -55,7 +55,7 @@ export default function Home() {
       "65f4514ae761f2656e2d",
       "65f456036ce1cd18daa8",
       ID.unique(),
-      { title: `ΚΟΥΡΤΙΝΑ Νο ${numb}` }
+      { title: `ΔΩΡΟ Νο ${numb}` }
     );
     setDisable(true);
     setHidden("");
@@ -105,7 +105,7 @@ export default function Home() {
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none disabled:opacity-25"
                   disabled={disable}
                 >
-                  Δώρο {b.num}
+                  ΚΟΥΡΤΙΝΑ {b.num}
                 </button>
                 <br />
                 <p className={`text-xs md:text-sm ${hidden}`}>
