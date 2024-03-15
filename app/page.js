@@ -58,7 +58,7 @@ export default function Home() {
   console.log(gift?.title);
   return (
     <main className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="text-center">
+      <div className="text-center flex flex-col p-5">
         <h1 className="text-4xl font-bold mb-4">Κατερίνα Βασιλοπούλου</h1>
         <h3 className="text-lg text-gray-700 mb-2">
           Αισίως πλησίασες ένα χρόνο πιο κοντά στα 100, αλλά μην ανησυχείς γιατί
@@ -88,6 +88,7 @@ export default function Home() {
                 </button>
                 <br />
                 <p className={`text-sm ${hidden}`}>
+                  🔗{" "}
                   <a href={b.url} className="text-blue-500">
                     {b.title}
                   </a>
