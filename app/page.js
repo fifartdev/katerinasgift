@@ -1,112 +1,106 @@
-import Image from "next/image";
+"use client";
+import { Client, Databases, ID } from "appwrite";
+import { useEffect, useState } from "react";
+const client = new Client();
+
+client
+  .setEndpoint("https://fifartapp.eu/v1")
+  .setProject("65f450c61b0228a4f66f");
+
+const database = new Databases(client);
 
 export default function Home() {
+  const [gifts, setGifts] = useState([]);
+  const [gift, setGift] = useState([]);
+
+  const [hidden, setHidden] = useState("invisible");
+
+  const buttons = [
+    {
+      num: 1,
+      title: "LONGCHAMP LE PLIAGE GREEN",
+      url: "https://www.atticadps.gr/gunaikeia-moda/tsantes/sakidia-platis/longchamp-gynaikeio-sakidio-platis-le-pliage-green-00000096321/?Color=%CE%9C%CE%B1%CF%8D%CF%81%CE%BF&campaignid=20516728234&gad_source=1&gclid=CjwKCAjw48-vBhBbEiwAzqrZVAeEUCiVxOntQgOyYMY4NfRxotPgLMiQOvgYSKo4BYCPep0cP7Zf-RoCOUYQAvD_BwE",
+    },
+    {
+      num: 2,
+      title: "Louis Vouitton Néonoé BB",
+      url: "https://en.louisvuitton.com/eng-nl/products/neonoe-bb-monogram-nvprod4280082v/M46581",
+    },
+    {
+      num: 3,
+      title: "Ταξίδι στη Ρώμη (Ανοιχτή ημερομηνία)",
+      url: "https://www.tripadvisor.com.gr/Tourism-g187791-Rome_Lazio-Vacations.html",
+    },
+  ];
+
+  const pressButton = async (numb) => {
+    await database.createDocument(
+      "65f4514ae761f2656e2d",
+      "65f456036ce1cd18daa8",
+      ID.unique(),
+      { title: `ΔΩΡΟ Νο ${numb}` }
+    );
+    setHidden("");
+    getGiftOption();
+  };
+
+  const getGiftOption = async () => {
+    const data = await database.listDocuments(
+      "65f4514ae761f2656e2d",
+      "65f456036ce1cd18daa8"
+    );
+    setGift(data.documents[0]);
+  };
+
+  useEffect(() => {
+    getGiftOption();
+  }, []);
+  console.log(gift?.title);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
+    <main className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Κατερίνα Βασιλοπούλου</h1>
+        <h3 className="text-lg text-gray-700 mb-2">
+          Αισίως πλησίασες ένα χρόνο πιο κοντά στα 100, αλλά μην ανησυχείς γιατί
+          όλα έχουν να κάνουν με την οπτική...
+        </h3>
+        <h4 className="text-md text-gray-600 mb-4">
+          Μέσα από αυτή την μικρή εφαρμογή μπορείς να διαλέξεις το 🎁 δώρο σου!
+        </h4>
+        <p className="text-gray-800 mb-4">
+          Μόλις κάνεις την επιλογή σου η οποία και θα είναι μία και μοναδική, θα
+          σου αποκαλυφθούν, οι άλλες 2 επιλογές που έχασες!
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+        <h1 className="text-2xl font-bold mb-4">Καλή σου τύχη!</h1>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="text-center ml-8">
+        <ul>
+          {buttons.map((b) => {
+            return (
+              <li key={b.num} className="mb-4">
+                <button
+                  onClick={() => {
+                    pressButton(b.num);
+                  }}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Δώρο {b.num}
+                </button>
+                <br />
+                <p className={`text-sm ${hidden}`}>
+                  <a href={b.url} className="text-blue-500">
+                    {b.title}
+                  </a>
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+        <h1 className={hidden}>Το Δώρο που επέλεξες είναι: {gift?.title}</h1>
+        <p className="text-sm italic text-gray-600 mt-4">
+          Στη περίπτωση που προσπαθήσεις να ξανατρέξεις την εφαρμογή... σε
+          ενημερώνω πως την επιλογή σου την έχω ήδη καταγράψει! 🙂
+        </p>
       </div>
     </main>
   );
