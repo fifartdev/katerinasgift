@@ -55,7 +55,7 @@ export default function Home() {
       "65f4514ae761f2656e2d",
       "65f456036ce1cd18daa8",
       ID.unique(),
-      { title: `ΔΩΡΟ Νο ${numb}` }
+      { title: `TO ΔΩΡΟ Νο ${numb}` }
     );
     setDisable(true);
     setHidden("");
